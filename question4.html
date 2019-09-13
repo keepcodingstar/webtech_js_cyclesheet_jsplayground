@@ -75,14 +75,53 @@ table {
 			text-align: center;
 			margin: 30px;
 		}
+		li
+		{
+			border: 2px solid red;
+			padding: 20px;
+		}
+		ul
+		{
+			margin-top: 50px;
+		}
+		#yo
+		{
+			font-weight: bold;
+			border: 4px solid yellow;
+		}
 	</style>
 	<script type="text/javascript">
 			function rev()
 			{
 				var form = document.querySelector("#form");
-				console.log(form.phrase.value);
+				// console.log(form.phrase.value);
 				var phrase_list= form.phrase.value.split(/\s+/);
 				console.log(phrase_list);
+				var filter_list= form.filter.value.split(" ");
+				console.log(filter_list);
+
+				console.log(phrase_list);
+				var ul = document.querySelector('#my_list');
+				ul.innerHTML = "";
+				console.log(ul)
+
+				for(var i=0 ;i<phrase_list.length ; i++)
+				{
+					for(var j=0 ;j<filter_list.length ; j++)
+					{
+						console.log(phrase_list[i]);
+						console.log(filter_list[j]);
+						console.log(phrase_list[i]===filter_list[j] );
+						if(phrase_list[i]!=="" && !(phrase_list[i]===filter_list[j] ))
+						{	
+							console.log(phrase_list[i]);
+							var li = document.createElement('li');
+							li.innerHTML = phrase_list[i].toString();
+							ul.appendChild(li);
+						}
+					}
+					
+				}
 			}
 	</script>
 </head>
@@ -100,6 +139,8 @@ table {
 			</div>
 			<div id="go_box">
 				<input type="button" onclick="rev()" name="submit" value="Go" id="go">
+				<ul id = "my_list">
+				</ul>
 			</div>
 		</form>
 	</div>
