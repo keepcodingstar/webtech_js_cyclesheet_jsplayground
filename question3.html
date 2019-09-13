@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUESTION 3</title>
+	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+	<style type="text/css">
+		html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*	
+		body
+		{
+			background-color: #5D6D7E ;
+			padding-right: 10%;
+			padding-left: 10%;
+		}
+		#form
+		{
+			background-color: #45B39D ;
+			height: 100vh;
+		}
+		#heading
+		{
+			font-family: 'Anton', sans-serif;
+			font-weight: bold;
+			font-size: 30px;
+		}
+		#head_box
+		{
+			text-align: center;
+			padding-top: 30px;
+		}
+		#mobile_box
+		{
+			text-align: center;
+		}
+		#regno_box
+		{
+			text-align: center;
+		}
+		#name_box
+		{
+			text-align: center;
+		}
+		#email_box
+		{
+			text-align: center;
+		}
+		#perm_box
+		{
+			text-align: center;
+		}
+		#check_box
+		{
+			text-align: center;
+		}
+		#temp_box
+		{
+			text-align: center;
+		}
+		#submit_box
+		{
+			text-align: center;
+		}
+		#mobile_error
+		{
+			color: red;
+			font-weight: bolder;
+		}
+		#reg_error
+		{
+			color: red;
+			font-weight: bolder;
+		}
+		#name_error
+		{
+			color: red;
+			font-weight: bolder;
+		}
+		#email_error
+		{
+			color: red;
+			font-weight: bolder;
+		}
+	</style>
+		<script type="text/javascript">
+		function myform()
+		{
+			var form = document.querySelector("#form_id");
+			var submit_b = document.querySelector("#submit_b");
+
+			console.log((form.mobile_no.value).toString().length);
+			submit_b.addEventListener("click",function(event)
+				{
+					event.preventDefault();
+				});
+			if((form.mobile_no.value).length!==10)
+			{
+				var mobile_error = document.querySelector("#mobile_error");
+				console.log(mobile_error);
+				mobile_error.textContent = "The Mobile No should be 10 digits long"; 
+			}
+			if(!(form.reg_no.value).match(/^[0-9a-z]+$/))
+			{
+				var reg_error = document.querySelector("#reg_error");
+				console.log(reg_error);
+				reg_error.textContent = "The Registration number should only be alphanumeric"; 
+			}
+			if((form.name.value).length>30)
+			{
+				var name_error = document.querySelector("#name_error");
+				console.log(name_error);
+			name_error.textContent = "The name should be less than 30 letters long"; 
+			}
+			if(!(form.email.value).match(/^[a-z0-9]+$/i))
+			{
+				var name_error = document.querySelector("#email_error");
+				console.log(email_error);
+				email_error.textContent = "This is not a valid email"; 
+			}	
+		}
+		function check_check()
+		{
+			var check = document.querySelector("#check");
+			console.log(check);
+			var temp_add = document.querySelector("#temp_add");
+			check.addEventListener("change",function()
+			{
+				if(this.checked)
+				{	
+				console.log(temp_add);
+				var perm_add = document.querySelector("#perm_add");
+				console.log(perm_add.value);
+				temp_add.setAttribute("value",perm_add.value);
+				}
+				else
+				{
+					console.log("#");
+					temp_add.setAttribute("value","");
+				}
+			})
+		}
+	</script>
+</head>
+<body >
+	<div id="form">
+		<div id="head_box">
+			<h1 id="heading">STUDENT REGISTRATION FORM</h1>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="form_box">
+			<form id="form_id">
+				<div id="mobile_box">
+					 Phone : 
+					<input type="text" name="mobile_no">
+					<div id="mobile_error_box">
+						<p id="mobile_error"></p>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div id="regno_box">
+					 RegNo: 
+					<input type="text" name="reg_no">
+					<div id="reg_error_box">
+						<p id="reg_error"></p>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div id="name_box">
+					 Name : 
+					<input type="text" name="name">
+					<div id="name_error_box">
+						<p id="name_error"></p>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div id="email_box">
+					 Email : 
+					<input type="text" name="email">
+					<div id="email_error_box">
+						<p id="email_error"></p>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div id="perm_box">
+					 Permanent Address : 
+					<input type="text" name="perm_add" id="perm_add">
+				</div>
+				<br>
+				<br>
+				<div id="check_box">
+					 Permanent Address Same as Temporary Address 
+					<input type="checkbox" name="check" id="check" onclick="check_check()">
+				</div>
+				<br>
+				<br>
+				<div id="temp_box">
+					 Temporary Address : 
+					<input type="text" name="temp_add" id="temp_add">
+				</div>
+				<br>
+				<br>
+				<div id="submit_box">
+					 <input onclick="myform()" type="button" name="submit" id="submit_b" value="Submit">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

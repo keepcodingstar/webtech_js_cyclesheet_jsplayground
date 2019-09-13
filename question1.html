@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function cal_charge(n)
+		{
+			var charge = (n<=3)? n*2 : (n-3)*0.50 + 6;
+			if(charge < 10)
+			{
+				alert("The charges are : " + charge.toString() + "$");
+			}
+			else
+			{
+				alert("The out standing charges are 10$");
+			}
+		}
+		var no_of_hr = prompt("ENTER THE NUMBER OF HOURS PARKED : ");
+		cal_charge(no_of_hr);
+		
+
+	</script>
+</head>
+<body>
+	<h1>QUESTION 1</h1>
+</body>
+</html>
