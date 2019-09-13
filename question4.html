@@ -76,14 +76,22 @@ table {
 			margin: 30px;
 		}
 	</style>
-
+	<script type="text/javascript">
+			function rev()
+			{
+				var form = document.querySelector("#form");
+				console.log(form.phrase.value);
+				var phrase_list= form.phrase.value.split(/\s+/);
+				console.log(phrase_list);
+			}
+	</script>
 </head>
 <body>
 	<div id="heading">
 		Sentence Reverser
 	</div>
 	<div>
-		<form onsubmit="">
+		<form id="form">
 			<div id="phrase_box">
 				Phrase:<input type="text" name="phrase" id="phrase">
 			</div>
@@ -91,7 +99,7 @@ table {
 				Filter : <input type="text" name="filter" id="filter">
 			</div>
 			<div id="go_box">
-				<input type="button" name="submit" value="Go" id="go">
+				<input type="button" onclick="rev()" name="submit" value="Go" id="go">
 			</div>
 		</form>
 	</div>
