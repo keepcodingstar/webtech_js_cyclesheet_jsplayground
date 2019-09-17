@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>question 5</title>
+	<style type="text/css">
+		html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+		#top_row
+		{
+			width: 100vw;
+			height: 50vh;
+			border: 2px solid red;
+		}
+		#top_frame
+		{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		#left_frame
+		{
+			height: 50vh;
+			width: 50%;
+			border: 2px solid red;
+			float:left;
+		}
+		#left
+		{
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+		#right_frame
+		{
+			width: 48%;
+			height: 50vh;
+			border: 2px solid red;
+			float:right;
+		}
+		#right
+		{
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	</style>
+</head>
+<body>
+	<div id="top_row">
+		<iframe name="top" src="question 5.1.html" id="top_frame"></iframe>
+	</div>
+	<div id="left_frame">
+		<iframe name='left' src="question 5.2.html" id="left"></iframe>
+	</div>
+	<div id="right_frame">
+		<iframe src="" id="right" name="right"></iframe>
+	</div>
+
+</body>
+</html>
