@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUESTION 7</title>
+	<script type="text/javascript" src="lib/jquery.js"></script>
+</head>
+<body bgcolor="#566573 ">
+		<form >
+			DEVISIBLE BY :<input  id="dev" type="text" name="dev">
+			<input type="button" name="delete" value="DELETE" onclick="del()">
+		</form>
+		<br>
+		<br>
+		<form>
+			<input id="11" type="button" name="11" value="11">
+			<input id="22" type="button" name="22" value="22">
+			<input id="34" type="button" name="34" value="34">
+			<input id="42" type="button" name="42" value="42">
+			<input id="50" type="button" name="50" value="50">
+			<input id="63" type="button" name="63" value="63">
+			<input id="71" type="button" name="71" value="71">
+			<input id="85" type="button" name="85" value="85">
+			<input id="94" type="button" name="94" value="94">
+			<input id="103" type="button" name="103" value="103">
+		</form>
+</body>
+	<script type="text/javascript">
+		function del()
+		{
+			var val = $("#dev").val();
+			if(parseInt($("#11").val())%parseInt(val)==0)
+			{
+				$("#11").remove();
+			}
+			if(parseInt($("#22").val())%parseInt(val)==0)
+			{
+				$("#22").remove();
+			}if(parseInt($("#34").val())%parseInt(val)==0)
+			{
+				$("#34").remove();
+			}if(parseInt($("#42").val())%parseInt(val)==0)
+			{
+				$("#42").remove();
+			}if(parseInt($("#50").val())%parseInt(val)==0)
+			{
+				$("#50").remove();
+			}if(parseInt($("#63").val())%parseInt(val)==0)
+			{
+				$("#63").remove();
+			}if(parseInt($("#71").val())%parseInt(val)==0)
+			{
+				$("#71").remove();
+			}if(parseInt($("#85").val())%parseInt(val)==0)
+			{
+				$("#85").remove();
+			}if(parseInt($("#94").val())%parseInt(val)==0)
+			{
+				$("#94").remove();
+			}if(parseInt($("#103").val())%parseInt(val)==0)
+			{
+				$("#103").remove();
+			}
+
+
+		}	
+	</script>
+</html>
