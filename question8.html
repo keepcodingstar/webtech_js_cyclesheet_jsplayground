@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUESTION 8</title>
+	<script type="text/javascript" src="lib/j.js"></script>
+		<script type="text/javascript">
+			function add_job()
+			{
+				console.log("helloe");
+				$("#to_do_list").append('<li id=' + $("#job").val() +  '>'+$("#job").val()+'</li><br/>');
+				$("#to_do_list").css({
+					fontSize:"25px",
+					fontFamily:"Impact"
+
+				});
+				$("#job").val("");
+			}
+			function remove_job()
+			{
+				console.log($("#job").val());
+				$("#"+$("#job").val()).remove();
+			}
+	</script>
+	<style type="text/css">
+		li:nth-child(even) 
+		{
+			background: #FAE5D3 ;
+		}
+	</style>
+</head>
+<body bgcolor="#BB8FCE">
+	<h1>MY SUPER NIFTY TO-DO LIST</h1>
+	<form>
+		<input type="text" name="name" placeholder="Enter Job Here"id="job">
+		<input type="button" id="addjob" value="ADD" name="add" onclick="add_job()">
+		<input type="button" name="remove" value="REMOVE" onclick="remove_job()" id="remove" >
+	</form>
+	<br>
+	<br>
+	<br>
+		<ol id="to_do_list">
+			
+		</ol>
+</body>
+
+</html>
