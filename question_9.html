@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUESTION 9</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<style type="text/css">
+		#form_heading
+		{
+			background-color: #34495E;
+			color: white;
+			padding: 30px;
+			font-family: 'Roboto Condensed', sans-serif;
+		}
+		#line
+		{
+			 border-top:3px dotted #000;
+		}
+		#form_body
+		{
+			padding: 30px;
+			background-color: #AEB6BF ;
+		}
+		#submit
+		{
+			padding: 20px;
+			background-color: #34495E;
+		}
+		#error_box
+		{
+			text-align: center;
+			background-color: #F5B7B1;
+		}
+	</style>
+	<script type="text/javascript" src="lib/j.js"></script>
+	<script type="text/javascript">
+		function valid()
+		{
+			console.log($("#first_name").val());
+			if($("#first_name").val()=="" || $("#last_name").val()=="" || $("#email").val()=="" || $("#zip_code").val()=="" || $("#first_name").val()=="")
+			{
+				var obj = $("#error").text("All fields are necessary");
+				obj.css({
+					color:"red",
+					fontSize:"20px",
+				});
+			}
+			else
+			{
+				if($("#zip_code").val().length!=5)
+				{
+					var obj = $("#error").text("Zip Code has to be 5 character long");
+					obj.css({
+						color:"red",
+						fontSize:"20px",
+					});
+				}
+				else
+				{
+					if(!$("#email").val().match(/\S+@\S+\.\S+/))
+					{
+						var obj = $("#error").text("Enter A valid email");
+						obj.css({
+							color:"red",
+							fontSize:"20px",
+						});
+					}
+					else
+					{
+						var obj = $("#error").text("Successfully Submitted.");
+						obj.css({
+							color:"green",
+							fontSize:"20px",
+						});
+						$("#error_box"). css({
+							backgroundColor:"#82E0AA "
+						}
+							);
+					}
+				}
+			}
+
+		}	
+		var options = {
+			data: ["Delhi","Vellore"]
+		};
+
+		$("#city").easyAutocomplete(options);
+	</script>
+</head>
+<body>
+	<div id="form_box">
+		<div id="form_heading">
+			<h1>EVENT REGISTRATION FORM</h1>
+		</div>
+		<form>
+			<div id="form_body">
+				First Name :<input type="text" name="first_name" id="first_name">
+				<br>
+				<br>
+				Last Name : <input id="last_name" type="text" name="last_name">
+				<br>
+				<br>
+				Email : <input type="text" name="email" id="email">
+				<br>
+				<br>
+				City : 
+				<input type="text" name="city" id="city">
+				<br>
+				<br>
+				State:
+				<select>
+					<option>Delhi</option>
+					<option>UP</option>
+					<option>UK</option>
+					<option>PUNJAB</option>
+				</select>
+				<br>
+				<br>
+				Zip Code : <input type="text" name="zip_code" id="zip_code"><br>
+				<br>
+				<hr id="line">
+				Speaking at the Conference :
+				Yes<input type="radio" name="speak" value="yes">
+				No<input type="radio" name="speak" value="no">
+				<br>
+				Conference Pass:<br>
+				1-Day Pass<input type="radio" name="pass" value="1day"><br>
+				2-Day Pass<input type="radio" name="pass" value="2day"><br>
+				3-Day Pass<input type="radio" name="pass" value="3day"><br>
+				4-Day Pass<input type="radio" name="pass" value="4day"><br>
+				<hr id="line">
+				Meal Preference :
+				<select>
+					<option>Veg</option>
+					<option>Non-Veg</option>
+				</select>
+			</div>
+			<div id="submit">
+				<center>
+					<input type="button" name="submit" onclick="valid()" id="on_submit" value="Submit">
+				</center>
+			</div>
+		</form>
+		<div id="error_box">
+			<p id="error"></p>
+		</div>
+	</div>
+</body>
+</html>
