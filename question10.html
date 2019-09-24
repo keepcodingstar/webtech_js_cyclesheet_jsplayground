@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUESTION 10</title>
+	<script type="text/javascript" src="lib/j.js"></script>
+	<script type="text/javascript">
+		function ans()
+		{
+			console.log("adsasd");
+			console.log($("#1").val());
+			if($("#1").is(":checked"))
+			{
+				$("#output1").text($("#1").val());
+
+			}
+						if($("#2").is(":checked"))
+			{
+
+				$("#output2").text($("#2").val());
+
+			}
+						if($("#3").is(":checked"))
+			{
+
+				$("#output3").text($("#3").val());
+
+			}
+						if($("#4").is(":checked"))
+			{
+				$("#output4").text($("#4").val());
+			}
+			
+		}
+	</script>
+</head>
+<body bgcolor="#7FB3D5">
+	<center>
+	<form id="form">
+		<input type="text" name="username" placeholder="username">
+		<br>
+		<br>
+		<label>Four 100 watt light bulbs for Rs. 20=39  </label><input type="checkbox" id="1" name="1" value="Four 100 watt light bulbs for Rs. 20=39 ">
+		<br>
+		<br>
+		<label>Eight 100 watt light bulbs for Rs 40=20 </label><input type="checkbox" id="2" name="2" value="Eight 100 watt light bulbs for Rs 40=20">
+		<br>
+		<br>
+		<labelw>Four 100 att long life light bulbs for Rs. 30=95</label><input type="checkbox" id="3" name="3" value="Four 100 att long life light bulbs for Rs. 30=95">
+		<br>
+		<br>
+		<label>Eight 100 watt long life light bulbs for Rs 70=49</label><input type="checkbox" id="4" name="4" value="Eight 100 watt long life light bulbs for Rs 70=49">
+		<br>
+		<br>
+		<label>Visa</label><input type="radio" name="5" value="visa">
+		<br>
+		<br>
+		<label>Master Card</label> <input type="radio" name="5" value="mastercard">
+		<br>
+		<br>
+		<label>Discover</label><input type="radio" name="5" value="discover">
+		<br>
+		<br>
+		<input type="button" name="submit" onclick="ans()" value="Submit">
+	</form>
+	</center>
+	<h1>WHAT WAS ORDERED</h1>
+	<p id="output1">
+		
+	</p>
+		<p id="output2">
+		
+	</p>
+		<p id="output3">
+		
+	</p>
+		<p id="output4">
+		
+	</p>
+</body>
+</html>
